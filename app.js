@@ -18,3 +18,21 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         }
     }    
 });
+
+document.querySelector('.btn-hold').addEventListener('click', function() {
+    if (game) {
+        scores[currentPlayer] += roundScore;
+
+        document.querySelector('#score-' + currentPlayer).textContent = scores[currentPlayer];
+
+        if (scores[currentPlayer] >= 100) {
+            document.querySelector('#name-' + currentPlayer).textContent = 'Winner!';
+            document.querySelector('.dice').style.display = 'none';
+            document.querySelector('.player-' + currentPlayer + '-panel').classList.add('winner');
+            document.querySelector('.player-' + currentPlayer + '-panel').classList.remove('active');
+            game = false;
+        } else {
+            nextPlayer();
+        }
+    }
+});
