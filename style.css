@@ -1,0 +1,11 @@
+.dice {
+    position: absolute;
+    left: 50%;
+    top: 250px;
+    transform: translateX(-50%);
+    height: 100px;
+}
+
+.btn-new { top: 75px;}
+.btn-roll { top: 500px;}
+.btn-hold { top: 600px;}
